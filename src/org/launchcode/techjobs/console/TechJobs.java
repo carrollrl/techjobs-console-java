@@ -111,16 +111,21 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        for(HashMap<String, String> job : someJobs) {
-            System.out.println("*****");
-            for(Map.Entry<String, String> pair : job.entrySet()) {
-                System.out.println(pair.getKey() + ": " + pair.getValue());
-            }
-            System.out.println("*****\n");
-
+        if(someJobs.isEmpty()) {
+            System.out.println("No results. Please try again.");
         }
+
+        else {
+            for (HashMap<String, String> job : someJobs) {
+                System.out.println("*****");
+                for (Map.Entry<String, String> pair : job.entrySet()) {
+                    System.out.println(pair.getKey() + ": " + pair.getValue());
+                }
+                System.out.println("*****\n");
+            }
+        }
+    }
 
 
         //System.out.println("printJobs is not implemented yet");
     }
-}
